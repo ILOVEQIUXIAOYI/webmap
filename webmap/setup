@@ -1,0 +1,15 @@
+#!/bin/bash
+pip3 install -i https://mirrors.tuna.tsinghua.edu.cn/ requests
+pip3 install -i https://mirrors.tuna.tsinghua.edu.cn/ BeautifulSoup
+pip3 install -i https://mirrors.tuna.tsinghua.edu.cn/ selenium
+pip3 install -i https://mirrors.tuna.tsinghua.edu.cn/ scapy
+apt-get install nmap
+apt-get install nikto
+apt-get install dirb
+apt-get install Wapiti
+apt-get insatll Metasploit
+wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
+tar -xvzf geckodriver-v0.23.0-linux64.tar.gz
+chmod +x geckodriver
+mv geckodriver /usr/local/bin/
+rm geckodriver-v0.23.0-linux64.tar.gz

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Webmap Penetration Testing Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/kube.min.css" />
+<link rel="stylesheet" type="text/css" href="css/master.css" />
+</head>
+<body>
+<div id="page">
+<h2 class="title" style="text-align: center">Webmap Penetration Testing Report</h2>
+<h3>Target: http://115.238.190.240</h3>
+<h3>Report at 2020-08-10 17:50:00.512575CST</h3>
+<hr/><h4>Tools used in this penetration testing</h4>
+<table class="width-100 hovered" no-repeat center;">
+<thead>
+<tr>
+<th>Tools</th>
+<th>Version</th>
+</tr>
+</thead>
+<tr>
+<td>Nmap</td>
+<td>7.7</td>
+</tr>
+<tr>
+<td>dirb</td>
+<td>2.22</td>
+</tr>
+<tr>
+<td>hydra</td>
+<td>8.9</td>
+</tr>
+<tr>
+<td>Nikto</td>
+<td>2.1.6</td>
+</tr>
+<tr>
+<td>wapiti</td>
+<td>3.0.1</td>
+</tr>
+<tr>
+<td>Metasploit</td>
+<td>5.0.16</td>
+</tr>
+</table>
+<hr/>
+<h4>HTTP Header Information Leakage</h4>
+<p>nginx</p>
+<h4>X-XSS-Protection</h4>
+<p>The X-XSS-Protection header is not defined</p>
+<h4>X-Content-Type-Options</h4>
+<p>The X-Content-Type-Options header is not set</p>
+<h4>Click hijack</h4>
+<p>X-Frame-Options header is not defined</p>
+<h4>Nmap Scan Result</h4>
+<table class="width-100 hovered" no-repeat center;">
+<thead>
+<tr>
+<th>Port/Protocal</th>
+<th>State</th>
+<th>Service</th>
+</tr>
+</thead>
+<tr><td>80/tcp</td>
+<td>open</td>
+<td>http</td>
+</tr>
+<tr><td>443/tcp</td>
+<td>open</td>
+<td>ssl/https</td>
+</tr>
+</table>
+<hr/>
+<h4>Vulnerablities Sum</h4>
+<table class="width-100 hovered" no-repeat center;">
+<tr style="color: red">
+<td class="small" style="color: red">High Vulnerabilites Sum：</td><td class="small .text-centered">0</td></tr>
+<tr style="color: orange">
+<td class="small" style="color: orange">Medium Vulnerabilites Sum：</td><td class="small .text-centered">0</td></tr>
+<tr style="color: seagreen">
+<td class="small" style="color: seagreen">Low Vulnerabilites Sum：</td><td class="small .text-centered">4</td></tr>
+</table>
+<hr/>
+<h4>Penetration Testing Result</h4>
+<h5 style="color: seagreen">Comprehensive evaluation of the system as a remote security system</h5>
+</body>
+</html>

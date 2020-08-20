@@ -1,0 +1,63 @@
+#!/bin/bash
+
+echo 
+echo -e "
+╦ ╦┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐
+║║║├┤ │  │  │ ││││├┤ 
+╚╩╝└─┘┴─┘└─┘└─┘┴ ┴└─┘
+ ______   _______  _______ _________ _______  _        _______  ______     ______              _______          
+(  __  \ (  ____ \(  ____ \\__   __/(  ____ \( (    /|(  ____ \(  __  \   (  ___ \ |\     /|  / ___   )|\     /|
+| (  \  )| (    \/| (    \/   ) (   | (    \/|  \  ( || (    \/| (  \  )  | (   ) )( \   / )  \/   )  |( \   / )
+| |   ) || (__    | (_____    | |   | |      |   \ | || (__    | |   ) |  | (__/ /  \ (_) /       /   ) \ (_) / 
+| |   | ||  __)   (_____  )   | |   | | ____ | (\ \) ||  __)   | |   | |  |  __ (    \   /       /   /   \   /  
+| |   ) || (            ) |   | |   | | \_  )| | \   || (      | |   ) |  | (  \ \    ) (       /   /     ) (   
+| (__/  )| (____/\/\____) |___) (___| (___) || )  \  || (____/\| (__/  )  | )___) )   | |      /   (_/\   | |   
+(______/ (_______/\_______)\_______/(_______)|/    )_)(_______/(______/   |/ \___/    \_/     (_______/   \_/   
+                                                                                                                
+"
+echo
+echo -e "
+usage: [-h] [-u URL] [-l USER] [-p PASSWD] [-L USERFILE] [-P PASSWDFILE] [-F]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u URL, --url URL     目标url（请添加http://或者https://的头部信息）
+  -l USER, --user USER  指定枚举的用户名
+  -p PASSWD, --passwd PASSWD  指定枚举的密码
+  -L USERFILE, --userfile USERFILE   用户名字典文件
+  -P PASSWDFILE, --passwdfile PASSWDFILE  密码字典文件
+  -F    启用全端口扫描
+"
+echo
+rotate_line(){
+INTERVAL=0.5  #设置间隔时间
+COUNT="0"     #设置4个形状的编号,默认编号为 0(不代表任何图像)
+while :
+do
+  COUNT=`expr $COUNT + 1` #执行循环,COUNT 每次循环加 1,(分别代表4种不同的形状)
+  case $COUNT in          #判断 COUNT 的值,值不一样显示的形状就不一样
+  "1")                    #值为 1 显示‐
+          echo -e '‐'"\b\c"
+          sleep $INTERVAL
+          ;;
+    "2")                  #值为 2 显示\\,第一个\是转义
+          echo -e '\\'"\b\c"
+          sleep $INTERVAL
+          ;;
+    "3")                  #值为 3 显示|
+          echo -e "|\b\c"
+          sleep $INTERVAL
+          ;;
+   "4")                   #值为 4 显示/
+          echo -e "/\b\c"
+          sleep $INTERVAL
+          ;;
+    *)                    #值为其他时,将 COUNT 重置为 0
+          COUNT="0";;
+    esac
+done
+}
+
+echo "please input the order:"
+read order
+./webmap.py $order 
